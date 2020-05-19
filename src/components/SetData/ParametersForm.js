@@ -25,6 +25,7 @@ export default function ParametersForm(props) {
         (response) => {
         const id = response.data.id.id
         setId({id})
+        setError(false)
         setSuccess(true)
         }).catch((error) => {
         setError(true)
