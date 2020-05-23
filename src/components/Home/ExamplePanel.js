@@ -5,7 +5,8 @@ export default function ExamplePanel() {
     return (
         <div style={{backgroundImage: `url(${beckgroungTransperant})`}}>
             <h1>Examples</h1>
-            <h2>Jupiter notebook executing the method:</h2>
+            <h2>Jupiter notebook</h2>
+            <p style={{fontSize: 20}}> This ia a jupiter notebook demonstrating the method execution</p>
             <p style={{fontSize: 20}}> <a href="https://nbviewer.jupyter.org/github/liel-cohen/CytoMod/blob/master/cytomod_notebook.ipynb">The Jupiter Notebook Example</a></p>  
         
         </div>

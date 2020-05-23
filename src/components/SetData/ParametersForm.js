@@ -46,7 +46,7 @@ return (
             <input type="text" name="name_compartment" placeholder="Plasma, Nasal Wash" onChange={event => setComperament(event.target.value)}/>
         <h3>Luminex</h3>
             <p> Mark this if your file is a luminex measurements file. Note - if you are using luminex directly, please make sure all value are specific.
-                if a value is mentioned as str please change it to a chosen real number  </p> 
+                if a value is not mentioned as numeric, please change it to a chosen real number  </p> 
             <input type="checkbox" name="luminex" onChange={event => setLuminex(event.target.value)}/>
             <label>luminex</label>
         <h3>Log Transformation on Cytokines Data</h3>
