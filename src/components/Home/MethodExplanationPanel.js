@@ -1,5 +1,4 @@
 import React from 'react'
-import * as classNames from "classnames";
 import methodFlow from './methodFlow.jpg';
 import transperantBackground from '../../transperantBackground.png'
 

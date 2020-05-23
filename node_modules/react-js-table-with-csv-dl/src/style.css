@@ -1,0 +1,277 @@
+.tableWithCSV{
+  margin: 0 auto;
+  font-family: Helvetica;
+  font-size: 14px;
+  padding: 0px 0px;
+  overflow: auto;
+  text-align: center;
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  margin: 10px 1%;
+}
+
+.tableWithCSVTable{
+  text-align: center;
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  margin: 10px 0;
+  width: 100%;
+}
+
+.tableWithCSV .header{
+  /*width: inherit;*/
+ /* padding: 0 8px;*/
+}
+
+.tableWithCSV .header1{
+  width: inherit;
+  padding: 0 8px;
+}
+
+.tableWithCSV .header2{
+  width: inherit;
+  padding: 0 8px;
+}
+
+.tableWithCSV .tableWithCSVTableHeader{
+  border: 2px solid;
+  text-align: center;
+  color: #000;
+  font-weight: bold;
+  font-family: sans-serif;
+  border: 1px solid #fff;
+  background-color: #0F991B;
+  color: white;
+  width: inline-block;
+  padding: 4px 8px;
+  font-weight: bold;
+
+ /*   width: 100%;*/
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+
+.tableWithCSV .tableWithCSVBody:nth-child(even){
+  background-color: #f2f2f2;
+}
+
+.tableWithCSV .tableWithCSVTableBody td {
+  padding: 0px;
+  border: 1px solid #ddd;
+}
+
+
+
+.tableWithCSV .divTableHeading .divTableRow .divTableCell:first-child{
+  border-left: 0px;
+}
+
+.tableWithCSV .divTableHeading .divTableRow .divTableCell:last-child{
+  border-right: 0px;
+}
+
+.tableWithCSV .fixed_headers {
+  /*width: 100%;*/
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+
+.tableWithCSV th, td {
+  padding: 5px;
+  text-align: left;
+}
+
+.tableWithCSV thead tr {
+   /* display: block;
+    position: relative;*/
+}
+
+.tableWithCSV tbody {
+ /* display: block;*/
+  overflow: auto;
+  width: 100%;
+  height: 300px;
+}
+
+.tableWithCSV .divTableContainer{
+  width:100%;
+  float: left;
+}
+
+.tableWithCSV  .divTableContainer .divTable{
+  display: table;
+  overflow: auto;
+  text-align: center;
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  width:100%;
+  margin-bottom: 10px;
+}
+
+.tableWithCSV .divTableRow {
+	display: table-row;
+}
+
+.tableWithCSV .divTableHeading {
+  padding: 5px;
+  background-color: #38bcc3;
+  color: white;
+  display: table-header-group;
+	font-weight: bold;
+}
+.tableWithCSV .divTableCell, .divTableHead {
+	border: 1px solid #ddd;
+  display: table-cell;
+  padding: 4px 10px;
+}
+
+.tableWithCSV .divTableFoot {
+	background-color: #EEE;
+	display: table-footer-group;
+	font-weight: bold;
+}
+
+.tableWithCSV .divTableBody {
+	display: table-row-group;
+}
+
+.tableWithCSV .divTableRow:nth-child(even){
+  background-color: #f2f2f2;
+}
+
+.tableWithCSV .divTableBody div {
+  padding: 4px;
+  /*border: 1px solid #ddd;*/
+}
+
+.tableWithCSV .loader {
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid #3498db;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  -webkit-animation: spin 1s linear infinite;
+  animation: spin 1s linear infinite;
+  margin: 0 5px;
+  display: inline-flex;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.tableWithCSV .csvFileDownloader{
+  margin-bottom: 10px;
+
+  text-align: left;
+}
+
+
+
+.tableWithCSV .csvFileDownloader button{
+  border: 0px solid #e7e7e7;
+  background-color: #e7e7e7;
+  color: #000;
+  padding: 1px 8px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+  margin-top: 8px;
+}
+
+.tableWithCSV .csvFileDownloader button:hover {
+    background-color: #adadad; /* Green */
+    color: #FFF;
+}
+
+.tableWithCSV .tableTitle{
+  font-weight: 600;
+  font-size: 35px;
+}
+
+.tableWithCSV a {
+  /*float: left;*/
+  display: block;
+  color: black;
+  text-align: center;
+  /*padding: 14px 16px;*/
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.tableWithCSV a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.tableWithCSV a.active {
+  background-color: #2196F3;
+  color: white;
+}
+
+.tableWithCSV .search-container {
+  float: right;
+  margin-bottom: 5px;
+}
+
+
+.tableWithCSV .search-container button {
+  float: right;
+  padding: 6px 10px;
+  margin-top: 8px;
+  margin-right: 16px;
+  background: #ddd;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+
+.tableWithCSV .search-container button:hover {
+  background: #ccc;
+}
+
+@media screen and (max-width: 600px) {
+  .search-container {
+    float: none;
+  }
+  .search-container .a, .search-container input[type=text], .search-container button {
+    float: none;
+    display: block;
+    text-align: left;
+    width: 100%;
+    margin: 0;
+    padding: 14px;
+  }
+  .search-container input[type=text] {
+    border: 1px solid #ccc;  
+  }
+}
+
+.tableWithCSV .search-container {
+  float: right;
+  padding-right: 0px;
+}
+
+.hljs-string { color: #0052cc; }
+.hljs-number { color: #009933; }
+.hljs-boolean { color: blue; }
+.hljs-null { color: magenta; }
+.hljs-key { color: #000; }
+
+.jsonviewer_json pre{
+  height: 746px;
+}
+
+pre {
+  text-align: left;
+}
+
+.paginator{
+  margin-top: 10px;
+  width: fit-content;
+}
+
+.searchComponent{
+  overflow: hidden;
+}

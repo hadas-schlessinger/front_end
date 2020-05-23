@@ -10,13 +10,7 @@ import Calculating from './components/SetData/Set';
 
 
 function App() {
-  // useEffect(() => {
-  //   fetch('/').then(response => {
-  //     response.json().then("Hi");
-  //   })
-  //   return () => {
-  //   }
-  // }, [input])
+
   return (
     <div >
     <React.Fragment>

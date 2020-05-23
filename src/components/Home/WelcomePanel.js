@@ -1,5 +1,4 @@
 import React from 'react'
-import * as classNames from "classnames";
 import beckgroungTransperant from '../../beckgroungTransperant.png'
 
 

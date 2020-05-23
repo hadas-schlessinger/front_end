@@ -1,6 +1,5 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState} from 'react'
 import * as SetParams from  '../../services/SetParams'
-import { useHistory } from "react-router-dom";
 import transperantBackground from '../../transperantBackground.png'
 import Calculating from './Calculating';
 

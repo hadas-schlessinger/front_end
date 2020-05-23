@@ -3,10 +3,10 @@ import beckgroungTransperant from '../../beckgroungTransperant.png'
 import AbsModulesView from './AbsModulesView';
 import AdjModulesView from './AdjModulesView';
 import ResultsSchema from './ResultsSchema'
-import JSZip from "jszip";
-import { saveAs } from 'file-saver';
+//import JSZip from "jszip";
+//import { saveAs } from 'file-saver';
 import NoResults from './NoResults';
-import decoder from '../../services/ImageDecoder'
+//import decoder from '../../services/ImageDecoder'
 
 
 export default function AllResults(props) {
