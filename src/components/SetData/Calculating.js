@@ -56,7 +56,7 @@ useEffect(() => {
             </React.Fragment>
             }
             {success &&  navigateTo("results")}
-            {error && <h3 className='error' style={{fontSize: 20, textAlign: 'center'}}>Someting is wrong with the given parameters, please check them again</h3>}  
+            {error && <h3 className='error' style={{fontSize: 20, textAlign: 'center'}}>Someting is wrong with the given parameters or data, please check them again</h3>}  
         </div>
     )
 }
