@@ -43,7 +43,7 @@ export default function UploadForm({onSetName}) {
         <h1>Upload your data</h1>
         <p>Please upload 2 excel files:
             one for the cytokins raw data and the other one for the patients data. 
-            For outcom analysis, patients data most be inserted as an additional file.
+            For outcom analysis, patients data must be inserted as an additional file.
         </p>
         <form>
         <h3>Project Name:</h3>
@@ -61,8 +61,8 @@ export default function UploadForm({onSetName}) {
           {Cytoerror && <medium className='error'>please insert cytokine data</medium>}
           <h3>Patients Data:</h3>
             <p>
-            <label>Patients Data:</label>
             <p>Insert patients data file. The file should be in .xls format. All the outcome variables and patients relevant details should appear in this file</p> 
+            <label>Patients Data:</label>
             <input type = "file" name = "patients" onChange={event => setPatients(event.target.files[0])} />
             </p>
             <input type="submit" value="Submit" onClick={(event) => onSubmit(event)} />
