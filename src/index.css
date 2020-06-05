@@ -71,6 +71,7 @@ a:hover {
 label{
 margin-left: 2mm;
 margin-right: 2mm;
+font-weight: bold;
 }
 
 /* Buttons */

@@ -64,8 +64,9 @@ export default function UploadForm({onSetName}) {
           <h3>Patients Data:</h3>
             <p>
             <p>Insert patients data file. The file should be in .xls format. </p> 
-            <p>This dataframe should contain outcome variables to be analyzed in the associations to outcomes analysis. It may also contain covariate variables for controlling the regression models built for the associations calculation.
-                Make sure binary columns contain 0 and 1 values, or True and False values (and cells with unknown values are left empty).</p>
+            <p>This dataframe should contain outcome variables to be analyzed in the associations to outcomes analysis.</p>
+            <p>It may also contain covariate variables for controlling the regression models built for the associations calculation.</p>
+            <p>Make sure binary columns contain 0 and 1 values, or True and False values (and cells with unknown values are left empty).</p>
             <p>The first column should be the subject IDs or a numerical index</p>
             <label>Patients Data:</label>
             <input type = "file" name = "patients" onChange={event => setPatients(event.target.files[0])} />
