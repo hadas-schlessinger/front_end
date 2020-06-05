@@ -56,13 +56,17 @@ export default function UploadForm({onSetName}) {
           <p>Insert cytokines data file. The file should be in .xls format and all values should be numeric. i.e - if cutokines values are below or above the normal values and presented as ">", a numeric value should be inserted instead.</p> 
           <p>If the data was collected using Luminex, the Luminex output file can be inserted. However, it should be marked in the right place when setting the analysis parameters. The values should also be numeric only in this case</p> 
           <p>Each column should be a different cytokine value and each row should specify the cytokine profile for one subject</p>
+          <p>The first column should be the subject IDs or a numerical index</p>
           <label> Cytokines Data: </label>
            <input type = "file" name = "cytokines" onChange={event => setCytokines(event.target.files[0])} />
           </p>
           {Cytoerror && <medium className='error'>please insert cytokine data</medium>}
           <h3>Patients Data:</h3>
             <p>
-            <p>Insert patients data file. The file should be in .xls format. All the outcome variables and patients relevant details should appear in this file</p> 
+            <p>Insert patients data file. The file should be in .xls format. </p> 
+            <p>This dataframe should contain outcome variables to be analyzed in the associations to outcomes analysis. It may also contain covariate variables for controlling the regression models built for the associations calculation.
+                Make sure binary columns contain 0 and 1 values, or True and False values (and cells with unknown values are left empty).</p>
+            <p>The first column should be the subject IDs or a numerical index</p>
             <label>Patients Data:</label>
             <input type = "file" name = "patients" onChange={event => setPatients(event.target.files[0])} />
             </p>
