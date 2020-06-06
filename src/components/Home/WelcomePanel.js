@@ -17,7 +17,7 @@ export default function WelcomePanel() {
             Moreover, the method can be applied on any dataset since it requires only the cytokines measurements and optionally the outcomes. 
             Furthermore, the approach can also be seen as a dimensionality reduction method. However, it is different than other such methods (PCA, LDA and more, usually lower the dimension by creating new features) since it retains the ability to discover fundamental biological insights.
             </p> 
-            <p style={{color: '#0B7478', fontSize: 22}}>This server was published on XXX - see the paper <a href="">here</a></p>
+           {/* <p style={{color: '#0B7478', fontSize: 22}}>This server was published on XXX - see the paper <a href="">here</a></p> */}
         </div>
     )
 }

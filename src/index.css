@@ -120,12 +120,13 @@ input[type="password"] {
 }
 
 input[type="text"]::placeholder,
-input[type="search"]::placeholder,
-input[type="password"]::placeholder {
+input[type="search"]::placeholder {
   color: #9aa7bd;
   opacity: 1;
   font-style: italic;
   opacity: 1;
+  width: 100px;
+  height: 100px;
 }
 
 .error {
