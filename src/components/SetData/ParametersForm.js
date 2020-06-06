@@ -71,7 +71,7 @@ return (
             <label>Covariates</label>
             <input type="text" name="covariates" placeholder="Age" onChange={event => setCovariates(event.target.value)}/>
         <h3>Patients data attributes to perform log function on</h3>
-            <p>List with names of covariate columns to be log-transformed, only if log_transform box is marked.
+            <p>List with names of covariate columns to be log-transformed.
             If there are no columns you wish to transform, leave empty </p>
             <label>Columns for log</label>
             <input type="text" name="log_column_names" placeholder="Age" onChange={event => setLogColumns(event.target.value)}/>
