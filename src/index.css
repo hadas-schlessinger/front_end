@@ -116,9 +116,12 @@ input[type="search"] {
   border: 1px #00B894 solid; 
   padding: 8px;
   font-size: 14px;
-  width: 100px;
-  height: 100px;
 }
+
+input[type="text"]{
+  width: 300px;
+}
+
 
 input[type="text"]::placeholder,
 input[type="search"]::placeholder {
