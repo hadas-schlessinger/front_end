@@ -109,14 +109,15 @@ input[type="reset"]:disabled {
 /* Input */
 input[type="number"],
 input[type="text"],
-input[type="search"],
-input[type="password"] {
+input[type="search"] {
   margin-left: 2mm;
   background-color: inherit;
   border: 0;
   border: 1px #00B894 solid; 
   padding: 8px;
   font-size: 14px;
+  width: 100px;
+  height: 100px;
 }
 
 input[type="text"]::placeholder,
@@ -125,8 +126,7 @@ input[type="search"]::placeholder {
   opacity: 1;
   font-style: italic;
   opacity: 1;
-  width: 100px;
-  height: 100px;
+  
 }
 
 .error {
