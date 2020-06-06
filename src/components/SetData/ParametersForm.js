@@ -41,7 +41,7 @@ return (
  <form action="/generate" method="post">
 <h2>Please set parameters for your project - {props.projectName} </h2>
         <h3>name of the compartment</h3>
-            <p>Insert the name of compartment from which cytokines were extracted, e.g., serum (for writing files)</p>
+            <p>Insert the name of compartment from which cytokines were extracted, e.g., serum, nasel, etc</p>
             <label>Name Compartment</label>
             <input type="text" name="name_compartment" placeholder="Plasma, Nasal Wash" onChange={event => setComperament(event.target.value)}/>
         <h3>Luminex</h3>
@@ -54,14 +54,14 @@ return (
             <input type="checkbox" name="log_transform" onChange={event => setLogCytokines(event.target.value)}/>
             <label>log transformation</label>
         <h3>Max Number of Clusters (k)</h3>
-            <p>max modules size - the maximal number of clusters that can be chosen.</p>
+            <p>The maximal number of clusters that can be chosen. The defualt value is 6 clusters</p>
             <label>Max K</label>
             <input type="number" name="max_testing_k" placeholder="6" onChange={event => setK(event.target.value)}/>
         <h3>Outcomes</h3>
-            <p>Optional. Names of outcome variables from the patients_data.xlsx data-frame to be analyzed.
+            <p>Optional. Names of outcome variables from the patients data data-frame to be analyzed.
             If list is left empty, will not perform the associations to outcomes analysis.
             To insert more then one column, please split the column names with ", " (i.e - outcome1, outcome2, ..., outcomeN)
-            Note - we currently supports binary outcome variables only, by using logistic regression</p>
+            Note - binary and continues variables should be analyzed separately (two runs, one for binary variables and one for continues variables)</p>
             <label>Outcomes</label>
             <input type="text" name="outcomes" placeholder="outcome variables" onChange={event => setOutcomes(event.target.value)}/>
         <h3> Covariates</h3>
@@ -71,7 +71,7 @@ return (
             <label>Covariates</label>
             <input type="text" name="covariates" placeholder="Age" onChange={event => setCovariates(event.target.value)}/>
         <h3>Patients data attributes to perform log function on</h3>
-            <p>List with names of covariate columns to be log-transformed, only if args.log_transform = True.
+            <p>List with names of covariate columns to be log-transformed, only if log_transform box is marked.
             If there are no columns you wish to transform, leave empty </p>
             <label>Columns for log</label>
             <input type="text" name="log_column_names" placeholder="Age" onChange={event => setLogColumns(event.target.value)}/>
