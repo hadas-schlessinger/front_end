@@ -50,7 +50,8 @@ useEffect(() => {
         <div style={{height: '100%', width:'100%'}}>
             {!error &&
             <React.Fragment>
-               <h2 style={{color: '#194d33', fontSize: 20, textAlign: 'center'}}>Your project ID is: {props.formID.id}</h2>
+               <h2 style={{color: '#194d33', fontSize: 20, textAlign: 'center'}}>Your project ID is: </h2>
+               <h2 style={{textTransform: 'lowercase'}}>{props.formID.id} </h2>
                <h2 style={{color: '#194d33', fontSize: 20, textAlign: 'center'}}>Your project name is {props.projectName} </h2>
                <LoadingPage/>
             </React.Fragment>
