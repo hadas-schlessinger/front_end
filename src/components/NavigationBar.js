@@ -27,7 +27,7 @@ const Styles = styled.div`
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto">
           <Nav.Item><Nav.Link href="/">Home</Nav.Link></Nav.Item> 
-          <Nav.Item><Nav.Link href="/set">Set</Nav.Link></Nav.Item> 
+          <Nav.Item><Nav.Link href="/set">Run</Nav.Link></Nav.Item> 
           <Nav.Item><Nav.Link href="/results">Results</Nav.Link></Nav.Item>
         </Nav>
         <Navbar.Brand>Cytomod Server</Navbar.Brand>
