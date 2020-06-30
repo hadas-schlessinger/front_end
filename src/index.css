@@ -53,7 +53,7 @@ h2.white {
 }
 
 h3 {
-  font-size: 20px;
+  font-size: 22px;
   line-height: 18px;
   color: #0B7478;
   text-transform: capitalize;
@@ -82,13 +82,14 @@ input[type="button"],
 input[type="submit"],
 input[type="reset"] {
   color: white;
-  font-size: 12px;
+  font-size: 14px;
   padding: 4px 10px;
   border-radius: 2px;
   border: solid 1px #15171c;
   background-color: #659b91;
   text-transform: capitalize;
   outline: none;
+  width:100px;
 }
 
 

@@ -39,24 +39,32 @@ return (
 {!success && <div>
  <h1>Settings</h1>
  <form action="/generate" method="post">
-<h2>Please set parameters for your project - {props.projectName} </h2>
-        <h3>name of the compartment</h3>
-            <p>Insert the name of compartment from which cytokines were extracted, e.g., serum, nasel, etc</p>
-            <label>Name Compartment</label>
-            <input type="text" name="name_compartment" placeholder="Plasma, Nasal Wash" onChange={event => setComperament(event.target.value)}/>
+<h2>Input Parameters for Project {props.projectName} </h2>
+<h2>Method parameters</h2>
+        <h3>Cytokines to Analyze</h3>
+            <p>List of cytokines to be analyzed. If None, will analyze all cytokines in the cytokine_data file</p>
+            <label>Cytokines</label>
+             <input type="text" name="cytokines" placeholder="List of cytokines" onChange={event => setCytokines(event.target.value)}/ >
         <h3>Luminex</h3>
             <p> Mark this if your file is a luminex measurements file. Note - if you are using luminex directly, please make sure all value are specific.
                 if a value is not mentioned as numeric, please change it to a chosen real number  </p> 
             <input type="checkbox" name="luminex" onChange={event => setLuminex(event.target.value)}/>
             <label>luminex</label>
-        <h3>Log Transformation on Cytokines Data</h3>
-            <p>Marking this will generate log transformation on the cytokine data</p>
-            <input type="checkbox" name="log_transform" onChange={event => setLogCytokines(event.target.value)}/>
-            <label>log transformation</label>
         <h3>Max Number of Clusters (k)</h3>
             <p>The maximal number of clusters that can be chosen. The defualt value is 6 clusters</p>
             <label>Max K</label>
             <input type="number" name="max_testing_k" placeholder="6" onChange={event => setK(event.target.value)}/>
+        <h3>Log Transformation on Cytokines Data</h3>
+            <p>Marking this will generate log transformation on the cytokine data</p>
+            <input type="checkbox" name="log_transform" onChange={event => setLogCytokines(event.target.value)}/>
+            <label>log transformation</label>     
+       
+        <h3>Name of the compartment</h3>
+            <p>Insert the name of compartment from which cytokines were extracted, e.g., serum, nasel, etc</p>
+            <label>Name Compartment</label>
+            <input type="text" name="name_compartment" placeholder="Plasma, Nasal Wash" onChange={event => setComperament(event.target.value)}/>
+        <h2>Sample Demographics and Clinical Outcomes Parameters (optional)</h2>
+        <b>Please insert the following parameters only if you uploaded sample demographics and clinical outcomes data</b>
         <h3>Outcomes</h3>
             <p>Optional. Names of outcome variables from the patients data data-frame to be analyzed.
             If list is left empty, will not perform the associations to outcomes analysis.
@@ -75,15 +83,12 @@ return (
             If there are no columns you wish to transform, leave empty </p>
             <label>Columns for log</label>
             <input type="text" name="log_column_names" placeholder="Age" onChange={event => setLogColumns(event.target.value)}/>
-        <h3>Cytokines to Analyze</h3>
-            <p>List of cytokines to be analyzed. If None, will analyze all cytokines in the cytokine_data file</p>
-            <label>Cytokines</label>
-             <input type="text" name="cytokines" placeholder="List of cytokines" onChange={event => setCytokines(event.target.value)}/ >
+        
          
     </form>
     <p></p>
         <input type="submit" value="Submit" onClick={(event) => onSubmit(event)}/>
-        <p>Clicking the "Submit" button, will start the analysis</p>
+        <p>Clicking the "Submit" button, will run the CytoMod analysis</p>
         </div>}
         {error && <medium className='error'>Something went wrong - please go back to the upload tab and insert your data and project name</medium>}
         {success && <Calculating projectName = {props.projectName} formID={formID} / >   }  

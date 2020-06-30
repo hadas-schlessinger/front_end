@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import * as Upload from "../../services/Upload"
 import { useHistory } from "react-router-dom";
 import transperantBackground from '../../transperantBackground.png'
-import { Label,Table } from 'semantic-ui-react'
+import { Table } from 'semantic-ui-react'
 
 
 export default function UploadForm({onSetName}) {
@@ -158,7 +158,7 @@ export default function UploadForm({onSetName}) {
             <label>Demographics and Clinical Outcomes Data:</label>
             <input type = "file" name = "patients" onChange={event => setPatients(event.target.files[0])} />
             </p>
-            <input type="submit" value="Submit" onClick={(event) => onSubmit(event)} />
+            <input type="submit" value="Upload" onClick={(event) => onSubmit(event)} />
             {/* {success &&  <div style={{color: '#0B7478'}}>SUCCESS! your data was uploaded. please set your params</div>}  */}
             {success &&  navigateTo("set/parameters")}  
     
