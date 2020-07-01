@@ -44,7 +44,7 @@ export default function ResultsSchema(props) {
                  
                 { hasResults && 
                 <React.Fragment>
-                <h4>To download an output you can click on it!</h4>  
+                <h4> Click to download any of the output figures </h4>  
                 <h2>Figures</h2>
                   <table>
                   <tbody>

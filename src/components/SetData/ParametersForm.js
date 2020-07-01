@@ -42,43 +42,38 @@ return (
  <form action="/generate" method="post">
 <h2>Input Parameters for Project {props.projectName} </h2>
 <h2>Method parameters</h2>
-        <h3>Cytokines to Analyze</h3>
-            <p>List of cytokines to be analyzed. If None, will analyze all cytokines in the cytokine data file</p>
+        <h3>Select Cytokines</h3>
+            <p>List of cytokines to be analyzed. If None, all cytokines in the cytokine data file will be included.</p>
             <label>Cytokines</label>
              <input type="text" name="cytokines" placeholder="List of cytokines" onChange={event => setCytokines(event.target.value)}/ >
         <h3>Luminex</h3>
-            <p> Mark this if your file is a luminex measurements file. Note - if you are using luminex directly, please make sure all value are specific.
-                if a value is not mentioned as numeric, please change it to a chosen real number  </p> 
+            <p> Check this box if your data is in Luminex™ format. You must verify that all values in your Luminex output file are numeric.  </p> 
             <input type="checkbox" name="luminex" onChange={event => setLuminex(event.target.value)}/>
             <label>luminex</label>
-        <h3>Max number of clusters (k)</h3>
-            <p>The maximal number of clusters that can be chosen. The defualt value is 6 clusters</p>
+        <h3>Maximal number of modules (k)</h3>
+            <p>Select the maximal number of modules allowed. Default is set to 6 clusters. The method will test all modules combinations up to the specified number (1 module, 2 modules...K modules)</p>
             <label>Max K</label>
             <input type="number" name="max_testing_k" placeholder="6" onChange={event => setK(event.target.value)}/>
         <h3>Log transformation on cytokine data</h3>
-            <p>Marking this will generate log transformation on the cytokine data</p>
+            <p>Check this box if you want to log-transform your data (see further explanation on data transformation on this <a href="https://en.wikipedia.org/wiki/Data_transformation_(statistics)"> Wikipedia</a> page</p>
             <input type="checkbox" name="log_transform" onChange={event => setLogCytokines(event.target.value)}/>
             <label>log transformation</label>     
        
         <h3>Name of the compartment</h3>
-            <p>Insert the name of compartment from which cytokines were extracted, e.g., serum, nasel, etc</p>
+            <p>Insert the name of compartment from which cytokines were extracted, e.g., serum, nasel, etc. This will be used for generating figures.</p>
             <label>Name Compartment</label>
             <input type="text" name="name_compartment" placeholder="Plasma, Nasal Wash" onChange={event => setComperament(event.target.value)}/>
         {patients && 
         <Fragment >
         <h2>Sample Demographics and Clinical Outcomes Parameters (optional)</h2>
-        <b>Please insert the following parameters only if you uploaded sample demographics and clinical outcomes data</b>
+        <b>Please set these parmeters only if you uploaded a sample demographics and clinical outcomes/phenotypes file. These parameters will be ignored if no such file was uploaded</b>
         <h3>Outcomes</h3>
-            <p>Optional. Names of outcome variables from the patients data data-frame to be analyzed.
-            If list is left empty, will not perform the associations to outcomes analysis.
-            To insert more then one column, please split the column names with ", " (i.e - outcome1, outcome2, ..., outcomeN)
-            Note - binary and continues variables should be analyzed separately (two runs, one for binary variables and one for continues variables)</p>
+            <p>Optional. If your data contains clinical output columns (e.g. hospitalization, disease severity), you can list these here. This will allow the method to also analyze associations between cytokine modules and these outcomes. Column names should be separated by commas (i.e. outcome1, outcome2, ..., outcomeN)
+            Note - binary and continues variables should be analyzed separately (two runs, one for binary variables and one for continuous variables)</p>
             <label>Outcomes</label>
             <input type="text" name="outcomes" placeholder="outcome variables" onChange={event => setOutcomes(event.target.value)}/>
         <h3> Covariates</h3>
-            <p>Optional. Names of covariate variables (columns) from the patients_data.xlsx data-frame
-            to be controlled for in the regression models. If list is left empty (i.e., []),
-            will not controll the associations to outcomes analysis with any covariate variables</p>
+            <p>Optional. Names of additional columns that are covariate variables within the  patients_data.xlsx data-frame. These will be used in the regression models for outcome analysis. Leave empty if no output columns are provided.</p>
             <label>Covariates</label>
             <input type="text" name="covariates" placeholder="Age" onChange={event => setCovariates(event.target.value)}/>
         <h3>Patients data attributes to perform log function on</h3>
