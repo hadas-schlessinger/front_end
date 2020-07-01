@@ -18,6 +18,8 @@ export default function WelcomePanel() {
             CytoMod can be applied to any cytokine dataset, and only requires the cytokines measurements and optionally some clinical outcomes. 
             </p> 
             <p style={{fontSize: 20}} className="pt-running-text">The method's code holds the  <a href="https://github.com/liel-cohen/CytoMod/blob/master/LICENSE">MIT License</a></p>
+            <h3>To run the method please go to the Run upper tab. To follow an example, please click on the Example tab, found on the left bar</h3>
+            <p></p>
             <h2>The Server Main Flow:</h2>
             <img src={ServerFlow} alt="The server flow" width={700} height={700} />;
             <p style={{fontSize: 20}} className="pt-running-text">After generating the method, results tab will present several tabs:</p>

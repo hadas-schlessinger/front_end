@@ -82,13 +82,13 @@ return (
         {menuItem: 'Previous Results', render: () => <Tab.Pane>{ <div style={{backgroundImage: `url(${beckgroungTransperant})`}} >
         <form>
         <h3>Results for previous project</h3>
-          <p>please insert your previous project id</p>
-          <p>please note - the results will only be shown if the analysis occured in the past week</p>
+          <p>Please insert your previous project run ID (was given during the run execution)</p>
+          <p>Please note - the results will only be shown if the analysis occured in the past week</p>
         <label>Id</label>
         <input type="text" name="id" placeholder="id" onChange={event => setID(event.target.value)}/ >            </form>
         <p></p>
         <input type="submit" value="Submit" onClick={(event) => onSubmit(event)}/>
-        <p>Clicking the "Submit" button, will return old project results</p>
+        <p>Clicking the "Submit" button, will return previous run results</p>
           </div>}</Tab.Pane>}]}
       />               
                

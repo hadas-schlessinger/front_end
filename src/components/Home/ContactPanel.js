@@ -25,7 +25,7 @@ export default function ContactPanel() {
         <p>Fax:    +972-8-6477626 </p>
         </p>
                                   
-        <h4 style={{fontSize: 20}}>The Hertz Lab develops computational and experimental tools to study the underlying mechanisms that govern the adaptive immune response in both natural infection and vaccination</h4>
+        <h4 style={{fontSize: 20}}>The Hertz lab develops computational and experimental tools to study the underlying mechanisms that govern the adaptive immune response in both natural infection and vaccination</h4>
          <p style={{fontSize: 20}}> <a href="https://www.hertz-lab.org/">The Lab Web Page</a></p>  
         </div>
     )
