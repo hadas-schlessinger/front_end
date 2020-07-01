@@ -24,7 +24,7 @@ export default function UploadForm({onSetName}) {
       .then((response) => {
         setNameError(false);
         setCytoError(false);
-        onSetName(name, response.data.id)
+        onSetName(name, response.data.id, response.data.outcomes)
         setSuccess(true);
       })
       .catch((e) => {
@@ -158,7 +158,7 @@ export default function UploadForm({onSetName}) {
             <label>Demographics and Clinical Outcomes Data:</label>
             <input type = "file" name = "patients" onChange={event => setPatients(event.target.files[0])} />
             </p>
-            <input type="submit" value="Upload" onClick={(event) => onSubmit(event)} />
+            <input type="submit" value="Next" onClick={(event) => onSubmit(event)} />
             {/* {success &&  <div style={{color: '#0B7478'}}>SUCCESS! your data was uploaded. please set your params</div>}  */}
             {success &&  navigateTo("set/parameters")}  
     

@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, Fragment} from 'react'
 import * as SetParams from  '../../services/SetParams'
 import transperantBackground from '../../transperantBackground.png'
 import Calculating from './Calculating';
@@ -16,7 +16,8 @@ export default function ParametersForm(props) {
   const [success, setSuccess] = useState(false)
   const [error, setError] = useState(false);
   const [formID, setId] = useState(props.id)
-  // useEffect()
+  const [patients, setPatients] = useState(props.outcomes)
+
 
   async function onSubmit(event) {
     event.preventDefault();   
@@ -42,7 +43,7 @@ return (
 <h2>Input Parameters for Project {props.projectName} </h2>
 <h2>Method parameters</h2>
         <h3>Cytokines to Analyze</h3>
-            <p>List of cytokines to be analyzed. If None, will analyze all cytokines in the cytokine_data file</p>
+            <p>List of cytokines to be analyzed. If None, will analyze all cytokines in the cytokine data file</p>
             <label>Cytokines</label>
              <input type="text" name="cytokines" placeholder="List of cytokines" onChange={event => setCytokines(event.target.value)}/ >
         <h3>Luminex</h3>
@@ -63,6 +64,8 @@ return (
             <p>Insert the name of compartment from which cytokines were extracted, e.g., serum, nasel, etc</p>
             <label>Name Compartment</label>
             <input type="text" name="name_compartment" placeholder="Plasma, Nasal Wash" onChange={event => setComperament(event.target.value)}/>
+        {patients && 
+        <Fragment>
         <h2>Sample Demographics and Clinical Outcomes Parameters (optional)</h2>
         <b>Please insert the following parameters only if you uploaded sample demographics and clinical outcomes data</b>
         <h3>Outcomes</h3>
@@ -83,13 +86,15 @@ return (
             If there are no columns you wish to transform, leave empty </p>
             <label>Columns for log</label>
             <input type="text" name="log_column_names" placeholder="Age" onChange={event => setLogColumns(event.target.value)}/>
+            </Fragment>
+            }
         
-         
     </form>
     <p></p>
         <input type="submit" value="Submit" onClick={(event) => onSubmit(event)}/>
         <p>Clicking the "Submit" button, will run the CytoMod analysis</p>
-        </div>}
+        </div>
+        }
         {error && <medium className='error'>Something went wrong - please go back to the upload tab and insert your data and project name</medium>}
         {success && <Calculating projectName = {props.projectName} formID={formID} / >   }  
 
