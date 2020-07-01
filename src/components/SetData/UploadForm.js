@@ -52,7 +52,7 @@ export default function UploadForm({onSetName}) {
             <label> Name: </label>
           <input type="text" name="name_data" placeholder="Your project name" onChange={event => setName(event.target.value)}/>
           {Nameerror && <medium className='error'>please insert your project's name</medium>}
-          <h3>Cytokines Data:</h3>
+          <h3>Upload Cytokines Data:</h3>
           <p>
           <p>Insert cytokines data file. The file should be in .xlsx format and all values should be numeric. i.e - if cutokines values are below or above the normal values and presented as ">", a numeric value should be inserted instead.</p> 
           <p>If the data was collected using Luminex, the Luminex output file can be inserted. However, it should be marked in the right place when setting the analysis parameters. The values should also be numeric only in this case</p> 
@@ -106,11 +106,11 @@ export default function UploadForm({onSetName}) {
            <input type = "file" name = "cytokines" onChange={event => setCytokines(event.target.files[0])} />
           </p>
           {Cytoerror && <medium className='error'>please insert cytokine data</medium>}
-          <h3>Sample Demographics and Clinical Outcomes (Optional):</h3>
+          <h3>Upload Sample Demographics and Clinical Outcomes (Optional):</h3>
             <p>
             <p>Upload a de-identified patient data file. The file should be in .xlsx format. Please make sure no personal identifiable information (e.g. patient name, id number) is uploaded within this file. </p> 
-            <p>This table should contain clinical outcomes/phenotypes (e.g. hospitalization, disesase severity) and any additional demographic data that you would like the computational model to consider when assessing associations of cytokine modules and clinical outcomes/phenotypes. </p>
-            <p> Important: make sure binary outcome columns only contain 0/1 values.or True/False values. Entries with unknown values should be left empty or (NA) File can have multiple clinical outcomes/phenotype columns as well as multiple demographic columns.The first column of this file should be the sample id (de-identified)   or a numerical index. Here is an example format </p>
+            <p>This table should contain clinical outcomes/phenotypes (e.g. hospitalization, disease severity) and any additional demographic data that you would like the computational model to consider when assessing associations of cytokine modules and clinical outcomes/phenotypes. </p>
+            <p> Important: make sure binary outcome columns only contain 0/1 values.or True/False values. Entries with unknown values should be left empty or NA. File can have multiple clinical outcomes/phenotype columns as well as multiple demographic columns.The first column of this file should be the sample id (de-identified)   or a numerical index. Here is an example format </p>
             <Table celled>
     <Table.Header>
       <Table.Row>

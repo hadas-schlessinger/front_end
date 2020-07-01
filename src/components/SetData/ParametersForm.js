@@ -51,11 +51,11 @@ return (
                 if a value is not mentioned as numeric, please change it to a chosen real number  </p> 
             <input type="checkbox" name="luminex" onChange={event => setLuminex(event.target.value)}/>
             <label>luminex</label>
-        <h3>Max Number of Clusters (k)</h3>
+        <h3>Max number of clusters (k)</h3>
             <p>The maximal number of clusters that can be chosen. The defualt value is 6 clusters</p>
             <label>Max K</label>
             <input type="number" name="max_testing_k" placeholder="6" onChange={event => setK(event.target.value)}/>
-        <h3>Log Transformation on Cytokines Data</h3>
+        <h3>Log transformation on cytokine data</h3>
             <p>Marking this will generate log transformation on the cytokine data</p>
             <input type="checkbox" name="log_transform" onChange={event => setLogCytokines(event.target.value)}/>
             <label>log transformation</label>     
