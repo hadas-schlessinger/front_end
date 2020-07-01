@@ -65,7 +65,7 @@ return (
             <label>Name Compartment</label>
             <input type="text" name="name_compartment" placeholder="Plasma, Nasal Wash" onChange={event => setComperament(event.target.value)}/>
         {patients && 
-        <Fragment>
+        <Fragment >
         <h2>Sample Demographics and Clinical Outcomes Parameters (optional)</h2>
         <b>Please insert the following parameters only if you uploaded sample demographics and clinical outcomes data</b>
         <h3>Outcomes</h3>
