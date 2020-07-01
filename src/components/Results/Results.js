@@ -63,9 +63,9 @@ export default function Results({state}) {
 
   const panes = [
       { menuItem: 'Overview', render: () => <Tab.Pane>{< OverviewPanel id = {id} results = {data}/ >}</Tab.Pane> },
-      { menuItem: 'Models Clustering', render: () => <Tab.Pane>{< ModelsClusteringPanel id = {id} results = {data}/>}</Tab.Pane> },
-      { menuItem: 'Models Correlations', render: () => <Tab.Pane>{< ModelsCorrelationPanel id = {id} results = {data}/>}</Tab.Pane> },
-      { menuItem: 'Outcom Analysis', render: () => <Tab.Pane>{< OutcomAnalysis id = {id} results = {data}/>}</Tab.Pane> },
+      { menuItem: 'Modules Identification', render: () => <Tab.Pane>{< ModelsClusteringPanel id = {id} results = {data}/>}</Tab.Pane> },
+      { menuItem: 'Modules Correlations', render: () => <Tab.Pane>{< ModelsCorrelationPanel id = {id} results = {data}/>}</Tab.Pane> },
+      { menuItem: 'Associations to Outcomes', render: () => <Tab.Pane>{< OutcomAnalysis id = {id} results = {data}/>}</Tab.Pane> },
       { menuItem: 'All Results', render: () => <Tab.Pane>{< AllResults id = {id} results = {data}/>}</Tab.Pane> }]
   
 
@@ -79,10 +79,10 @@ return (
       menu={{ fluid: true, vertical: true, tabular: true }} 
       grid={{paneWidth: 14, tabWidth: 2}} 
       panes={[
-        {menuItem: 'Old Results', render: () => <Tab.Pane>{ <div style={{backgroundImage: `url(${beckgroungTransperant})`}} >
+        {menuItem: 'Previous Results', render: () => <Tab.Pane>{ <div style={{backgroundImage: `url(${beckgroungTransperant})`}} >
         <form>
-        <h3>Results for old project</h3>
-          <p>please insert your old project id</p>
+        <h3>Results for previous project</h3>
+          <p>please insert your previous project id</p>
           <p>please note - the results will only be shown if the analysis occured in the past week</p>
         <label>Id</label>
         <input type="text" name="id" placeholder="id" onChange={event => setID(event.target.value)}/ >            </form>
