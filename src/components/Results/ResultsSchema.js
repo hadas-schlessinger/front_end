@@ -40,7 +40,7 @@ export default function ResultsSchema(props) {
     return (
         <div style={{backgroundImage: `url(${beckgroungTransperant})`}}>           
                  <h1>{props.panel} Results for {props.state} Cytokines for the {props.id} Project </h1>
-                
+                <h3>{props.overview}</h3>
                  
                 { hasResults && 
                 <React.Fragment>

@@ -11,7 +11,8 @@ export default function ModelsCorrelationPanel(props) {
           results = {props.results} 
           panel={'Modules Correlation'}
           state={'Absolute'}
-          location={'correlation_abs'}/ >}</Tab.Pane>,
+          location={'correlation_abs'}
+          overview={'Correlations within each module'}/ >}</Tab.Pane>,
         },
         {
           menuItem: 'Adjusted Cytokines',
@@ -19,7 +20,8 @@ export default function ModelsCorrelationPanel(props) {
           results = {props.results} 
           panel={'Modules Correlation'}
           state={'Adjusted'}
-          location={'correlation_adj'}/ >}</Tab.Pane>,
+          location={'correlation_adj'}
+          overview={'Correlations within each module'}/ >}</Tab.Pane>,
         },
        
       ]

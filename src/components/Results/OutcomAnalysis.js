@@ -11,7 +11,8 @@ export default function OutcomAnalysis(props) {
           results = {props.results} 
           panel={'Outcome Analysis'}
           state={'Absolute'}
-          location={'outcome_abs'}/ >}</Tab.Pane>,
+          location={'outcome_abs'}
+          overview={'Associations of cytokine modules, and individual cytokines with clinical phenotypes'}/ >}</Tab.Pane>,
         },
         {
           menuItem: 'Adjusted Cytokines',
@@ -19,7 +20,8 @@ export default function OutcomAnalysis(props) {
           results = {props.results} 
           panel={'Outcome Analysis'}
           state={'Adjusted'}
-          location={'outcome_adj'}/ >}</Tab.Pane>,
+          location={'outcome_adj'}
+          overview={'Associations of cytokine modules, and individual cytokines with clinical phenotypes'}/ >}</Tab.Pane>,
         },
        
       ]

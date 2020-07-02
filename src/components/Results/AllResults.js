@@ -1,4 +1,4 @@
-import React, { useState, useEffect} from 'react'
+import React, { useState, useEffect, Fragment} from 'react'
 import beckgroungTransperant from '../../beckgroungTransperant.png'
 import AbsModulesView from './AbsModulesView';
 import AdjModulesView from './AdjModulesView';
@@ -57,6 +57,7 @@ export default function AllResults(props) {
                 <React.Fragment>
                  {/* <input type="submit" value="Download Results Zip File" onClick={(event) => onSubmit(event)}/>       */}
                  <h1>The Modules for the Project</h1>
+                 <h3>All generated modules are presented and can be downloaded, as well as a figure pointing on the motivation to adjust cytokine values</h3>
                  {rows.map(row =>                  
                     <AbsModulesView results = {props.results} row = {row} />
                     )
@@ -69,37 +70,44 @@ export default function AllResults(props) {
           results = {props.results} 
           panel={'Overview'}
           state={'All'}
-          location={'overview'}/ >
+          location={'overview'}
+          overview={''}/ >
                 < ResultsSchema id = {''} 
           results = {props.results} 
           panel={'Clustering'}
           state={'Absolute'}
-          location={'clustering_abs'}/ >
+          location={'clustering_abs'}
+          overview={<Fragment>Pairwise correlation plot and clustering dendrograms of the data. First figure demonstartes the chosen number of modules according to the' <a href="https://rss.onlinelibrary.wiley.com/doi/abs/10.1111/1467-9868.00293"> Tibshirani gap statistic</a>, the second figure points on the correlations between each pair of cytokines. The last figure presents the final modules based on the number of times that each pair of cytokines were clusters together among 1000 runs</Fragment>}/ >
               < ResultsSchema id = {''} 
           results = {props.results} 
           panel={'Clustering'}
           state={'Adjusted'}
-          location={'clustering_adj'}/ >
+          location={'clustering_adj'}
+          overview={<Fragment>Pairwise correlation plot and clustering dendrograms of the data. First figure demonstartes the chosen number of modules according to the' <a href="https://rss.onlinelibrary.wiley.com/doi/abs/10.1111/1467-9868.00293"> Tibshirani gap statistic</a>, the second figure points on the correlations between each pair of cytokines. The last figure presents the final modules based on the number of times that each pair of cytokines were clusters together among 1000 runs</Fragment>}/ >
               < ResultsSchema id = {''} 
           results = {props.results} 
           panel={'Modules Correlation'}
           state={'Absolute'}
-          location={'correlation_abs'}/ >
+          location={'correlation_abs'}
+          overview={'Correlations within each module'}/ >
               < ResultsSchema id = {''}
           results = {props.results} 
           panel={'Modules Correlation'}
           state={'Adjusted'}
-          location={'correlation_adj'}/ >
+          location={'correlation_adj'}
+          overview={'Correlations within each module'}/ >
               < ResultsSchema id = {''}
           results = {props.results} 
           panel={'Outcome Analysis'}
           state={'Absolute'}
-          location={'outcome_abs'}/ >
+          location={'outcome_abs'}
+          overview={'Associations of cytokine modules, and individual cytokines with clinical phenotypes'}/ >
               < ResultsSchema id = {''}
           results = {props.results} 
           panel={'Outcome Analysis'}
           state={'Adjusted'}
-          location={'outcome_adj'}/ >
+          location={'outcome_adj'}
+          overview={'Associations of cytokine modules, and individual cytokines with clinical phenotypes'}/ >
         </React.Fragment>
 
                 }

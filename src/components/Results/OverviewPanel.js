@@ -28,6 +28,7 @@ export default function OverviewPanel(props) {
     return (
         <div style={{backgroundImage: `url(${beckgroungTransperant})`}}>           
                  <h1>Overview for project {props.id}</h1>
+                 <h3>All generated modules are presented and can be downloaded, as well as a figure pointing on the motivation to adjust cytokine values</h3>
                  { hasResults && 
                 <React.Fragment>
                  <h2>Modules</h2>
@@ -42,7 +43,7 @@ export default function OverviewPanel(props) {
                 
                 
                 <h2>Figures</h2>
-                <h4>To download an output you can click on it!</h4>  
+                <h4> Click to download any of the output figures </h4>  
                   <table>
                   <tbody>
                 {rows.map(row =>                  
