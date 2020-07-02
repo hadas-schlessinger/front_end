@@ -64,7 +64,7 @@ export default function Results({state}) {
   const panes = [
       { menuItem: 'Overview', render: () => <Tab.Pane>{< OverviewPanel id = {id} results = {data}/ >}</Tab.Pane> },
       { menuItem: 'Modules Identification', render: () => <Tab.Pane>{< ModelsClusteringPanel id = {id} results = {data}/>}</Tab.Pane> },
-      { menuItem: 'Modules Correlations', render: () => <Tab.Pane>{< ModelsCorrelationPanel id = {id} results = {data}/>}</Tab.Pane> },
+      { menuItem: 'Module Correlations', render: () => <Tab.Pane>{< ModelsCorrelationPanel id = {id} results = {data}/>}</Tab.Pane> },
       { menuItem: 'Associations to Outcomes', render: () => <Tab.Pane>{< OutcomAnalysis id = {id} results = {data}/>}</Tab.Pane> },
       { menuItem: 'All Results', render: () => <Tab.Pane>{< AllResults id = {id} results = {data}/>}</Tab.Pane> }]
   
