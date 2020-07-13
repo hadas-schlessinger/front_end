@@ -13,7 +13,7 @@ export default function ModelsClusteringPanel(props) {
           panel={'Clustering'}
           state={'Absolute'}
           location={'clustering_abs'}
-          overview={<Fragment>Pairwise correlation plot and clustering dendrograms of the data. First figure demonstartes the chosen number of modules according to the' <a href="https://rss.onlinelibrary.wiley.com/doi/abs/10.1111/1467-9868.00293"> Tibshirani gap statistic</a>, the second figure points on the correlations between each pair of cytokines. The last figure presents the final modules based on the number of times that each pair of cytokines were clusters together among 1000 runs</Fragment>}/ >}</Tab.Pane>,
+          overview={<Fragment>Pairwise correlation plot and clustering dendrograms of the data. First figure demonstartes the chosen number of modules according to the <a href="https://rss.onlinelibrary.wiley.com/doi/abs/10.1111/1467-9868.00293"> Tibshirani gap statistic</a>, the second figure points on the correlations between each pair of cytokines. The last figure presents the final modules based on the number of times that each pair of cytokines were clusters together among 1000 runs</Fragment>}/ >}</Tab.Pane>,
         },
         {
           menuItem: 'Adjusted Cytokines',
@@ -22,7 +22,7 @@ export default function ModelsClusteringPanel(props) {
           panel={'Clustering'}
           state={'Adjusted'}
           location={'clustering_adj'}
-          overview={<Fragment>Pairwise correlation plot and clustering dendrograms of the data. First figure demonstartes the chosen number of modules according to the' <a href="https://rss.onlinelibrary.wiley.com/doi/abs/10.1111/1467-9868.00293"> Tibshirani gap statistic</a>, the second figure points on the correlations between each pair of cytokines. The last figure presents the final modules based on the number of times that each pair of cytokines were clusters together among 1000 runs</Fragment>}/ >}</Tab.Pane>,
+          overview={<Fragment>Pairwise correlation plot and clustering dendrograms of the data. First figure demonstartes the chosen number of modules according to the <a href="https://rss.onlinelibrary.wiley.com/doi/abs/10.1111/1467-9868.00293"> Tibshirani gap statistic</a>, the second figure points on the correlations between each pair of cytokines. The last figure presents the final modules based on the number of times that each pair of cytokines were clusters together among 1000 runs</Fragment>}/ >}</Tab.Pane>,
         },
        
       ]

@@ -21,9 +21,9 @@ export default function WelcomePanel() {
             <h3 >To run the method please go to the Run upper tab. To follow an example, please click on the Example tab, found on the left bar</h3>
             <p>  </p>
             <h2>The Server Main Flow:</h2>
-            <img src={ServerFlow} alt="The server flow" width={800} height={700} />;
-            <p style={{fontSize: 20}} className="pt-running-text">After generating the method, results tab will present several tabs:</p>
-            <img src={Results} alt="Results tab" width={1200} height={700} />;
+            <img src={ServerFlow} alt="The server flow" width={700} height={650} />;
+            <p style={{fontSize: 20}} className="pt-running-text">After generating the method, results tab will present several sections:</p>
+            <img src={Results} alt="Results tab" width={1000} height={600} />;
             <p style={{fontSize: 20}} className="pt-running-text">Results will also be available for download!</p>
 
 
