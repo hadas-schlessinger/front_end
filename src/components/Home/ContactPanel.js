@@ -5,6 +5,8 @@ export default function ContactPanel() {
     return (
         <div style={{backgroundImage: `url(${beckgroungTransperant})`}}>
         <h1>Contact details</h1>
+        <h4 style={{fontSize: 20}}>The Hertz lab develops computational and experimental tools to study the underlying mechanisms that govern the adaptive immune response in both natural infection and vaccination</h4>
+
         <h2>Lab information</h2>
         <h3>Address</h3>
         <p style={{fontSize: 20, marginLeft: 2}}> 
@@ -18,15 +20,18 @@ export default function ContactPanel() {
         </p>
         <h3>Contact</h3>
         <p style={{fontSize: 20, marginLeft: 2}}>
-        <p>Email:  hertzlabbgu@gmail.com</p>
+        <p>CytoMod Email:  cytomod@gmail.com</p>
+        <p>Lab Email:  hertzlabbgu@gmail.com</p>
         <p> Office: +972-8-642-8856</p>
-        <p> Cell:   +972-58-44-90-888</p>
         <p> US:     +1-206-388-6320</p>
         <p>Fax:    +972-8-6477626 </p>
+        <p>Website:  <a href="https://www.hertz-lab.org/" > www.hertz-lab.org </a></p> 
+
         </p>
+
+        <h4 style={{fontSize: 20}}>The CytoMod server was developed by Hadas Schlessinger, and is maintained by the Hertz Lab at Ben-Gurion University of the Negev.</h4>
                                   
-        <h4 style={{fontSize: 20}}>The Hertz lab develops computational and experimental tools to study the underlying mechanisms that govern the adaptive immune response in both natural infection and vaccination</h4>
-         <p style={{fontSize: 20}}> <a href="https://www.hertz-lab.org/">The Lab Web Page</a></p>  
+          
         </div>
     )
 }

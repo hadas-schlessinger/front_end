@@ -18,10 +18,13 @@ export default function MethodExplanationPanel() {
                 Modules are generated using unsupervised hierarchical clustering. Associations (6) are then tested between module levels (5) and clinical phenotypes. 
                 By significantly reducing the number of associations tested, CytoMod increases the statistical power to detect associations. 
                 By comparing modules across datasets, CytoMod can also identify “cores” of cytokines that consistently co-signal together <a href="https://www.frontiersin.org/articles/10.3389/fimmu.2019.01338/">(Cohen et al., 2019)</a>   
-                 </p></td>
-                 <td><img src={methodFlow} alt="The flow as presented in the article" />;</td>
-            </tr>
+                 </p>
+                 <p style={{textAlign:'center'}}><img src={methodFlow} alt="The flow as presented in the article"/></p>;  
+                 </td>
+                 
+               </tr>
             </table>
+                     
             
             <h2><span >Further Explanation</span></h2>
             <p style={{fontSize: 20}} className="pt-running-text">
