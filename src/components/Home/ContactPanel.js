@@ -7,7 +7,7 @@ export default function ContactPanel() {
         <h1>Contact details</h1>
         <h4 style={{fontSize: 20}}>The Hertz lab develops computational and experimental tools to study the underlying mechanisms that govern the adaptive immune response in both natural infection and vaccination</h4>
 
-        <h2>Lab information</h2>
+        <h2>Lab Information</h2>
         <h3>Address</h3>
         <p style={{fontSize: 20, marginLeft: 2}}> 
         <p>The Hertz Lab</p>

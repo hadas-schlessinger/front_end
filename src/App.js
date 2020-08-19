@@ -7,6 +7,11 @@ import Home from './components/Home/Home';
 import Set from './components/SetData/Set';
 import Results from './components/Results/Results';
 import Calculating from './components/SetData/Set';
+import ReactGA from 'react-ga';
+
+
+ReactGA.initialize('UA-175788401-1');
+ReactGA.pageview(window.location.pathname + window.location.search);
 
 
 function App() {

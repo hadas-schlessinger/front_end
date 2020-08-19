@@ -42,7 +42,7 @@ color: #0FA6AB;
 h2 {
   font-size: 24px;
   line-height: 28px;
-  text-transform: capitalize;
+  /* text-transform: capitalize; */
   font-weight: 300;
   font-family: "OpenSansCondensed", sans-serif;
   margin-bottom: 1rem;

@@ -43,7 +43,9 @@ return (
 <h2>Input Parameters for Project {props.projectName} </h2>
 <h2>Method parameters</h2>
         <h3>Select Cytokines</h3>
-            <p>List of cytokines to be analyzed. If None, all cytokines in the cytokine data file will be included.</p>
+            <p>List of cytokines to be analyzed. 
+               Cytokine names should be separated by commas (i.e. cy1, cy2, ..., cyN). Also, column names shouldn’t contain commas.
+               If left empty, all cytokines in the cytokine data file will be included.</p>
             <label>Cytokines</label>
              <input type="text" name="cytokines" placeholder="List of cytokines" onChange={event => setCytokines(event.target.value)}/ >
         <h3>Luminex</h3>
@@ -56,28 +58,29 @@ return (
             <input type="number" name="max_testing_k" placeholder="6" onChange={event => setK(event.target.value)}/>
         <h3>Log transformation on cytokine data</h3>
             <p>Check this box if you want to log-transform your data (see further explanation on data transformation on this <a href="https://en.wikipedia.org/wiki/Data_transformation_(statistics)"> Wikipedia</a> page</p>
+            <p>Please note - the specific transformation is log(x+1)</p>
             <input type="checkbox" name="log_transform" onChange={event => setLogCytokines(event.target.value)}/>
             <label>log transformation</label>     
        
         <h3>Name of the compartment</h3>
             <p>Insert the name of compartment from which cytokines were extracted, e.g., serum, nasel, etc. This will be used for generating figures.</p>
             <label>Name Compartment</label>
-            <input type="text" name="name_compartment" placeholder="Plasma, Nasal Wash" onChange={event => setComperament(event.target.value)}/>
+            <input type="text" name="name_compartment" placeholder="Plasma (default), Nasal Wash" onChange={event => setComperament(event.target.value)}/>
         {patients && 
         <Fragment >
         <h2>Sample Demographics and Clinical Outcomes Parameters (optional)</h2>
         <b>Please set these parmeters only if you uploaded a sample demographics and clinical outcomes/phenotypes file. These parameters will be ignored if no such file was uploaded</b>
         <h3>Outcomes</h3>
-            <p>Optional. If your data contains clinical output columns (e.g. hospitalization, disease severity), you can list these here. This will allow the method to also analyze associations between cytokine modules and these outcomes. Column names should be separated by commas (i.e. outcome1, outcome2, ..., outcomeN)
+            <p>Optional. If your data contains clinical output columns (e.g. hospitalization, disease severity), you can list these here. This will allow the method to also analyze associations between cytokine modules and these outcomes. Column names should be separated by commas (i.e. outcome1, outcome2, ..., outcomeN). Also, column names shouldn’t contain commas.
             Note - binary and continues variables should be analyzed separately (two runs, one for binary variables and one for continuous variables)</p>
             <label>Outcomes</label>
             <input type="text" name="outcomes" placeholder="outcome variables" onChange={event => setOutcomes(event.target.value)}/>
         <h3> Covariates</h3>
-            <p>Optional. Names of additional columns that are covariate variables within the  patients_data.xlsx data-frame. These will be used in the regression models for outcome analysis. Leave empty if no output columns are provided.</p>
+            <p>Optional. Names of additional columns that are covariate variables within the demographics and clinical outcomes/phenotypes file. These will be used in the regression models for outcome analysis. Leave empty if no output columns are provided.</p>
             <label>Covariates</label>
             <input type="text" name="covariates" placeholder="Age" onChange={event => setCovariates(event.target.value)}/>
         <h3>Patients data attributes to perform log function on</h3>
-            <p>List with names of covariate columns to be log-transformed.
+            <p>List with names of covariate columns to be log-transformed. Column names should be separated by commas (i.e. covariate1, covariate2, ..., covariateN). Also, column names shouldn’t contain commas.
             If there are no columns you wish to transform, leave empty </p>
             <label>Columns for log</label>
             <input type="text" name="log_column_names" placeholder="Age" onChange={event => setLogColumns(event.target.value)}/>

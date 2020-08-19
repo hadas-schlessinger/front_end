@@ -17,6 +17,7 @@
     "react": "^16.13.1",
     "react-bootstrap": "^1.0.1",
     "react-dom": "^16.13.1",
+    "react-ga": "^3.1.2",
     "react-js-table-with-csv-dl": "^0.9.7",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.1",
@@ -34,7 +35,7 @@
   "eslintConfig": {
     "extends": "react-app"
   },
-  "proxy": "https://app:5000",
+  "proxy": "http://127.0.0.1:5000/",
   "browserslist": {
     "production": [
       ">0.2%",

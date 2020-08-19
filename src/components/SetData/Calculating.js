@@ -8,6 +8,7 @@ import * as SetParams from  '../../services/SetParams'
 export default function Calculating(props) {
   const [success, setSuccess] = useState(false)
   const [error, setError] = useState(false);
+  const [error_msg, setErrorMsg] = useState(false);
   const history = useHistory();
 
     const request = () => {
@@ -17,9 +18,14 @@ export default function Calculating(props) {
       }
       SetParams.methodStatus(props.projectName, props.formID.id).then((response) =>{
         console.log({status: response.data.status});
-        if (response.data.status == "ERROR"){
+        if (response.data.status == "DATA ERROR"){
+          setErrorMsg(response.data.message)
           setError(true)
        }
+       if (response.data.status == "RUN TIME ERROR"){
+        setErrorMsg(response.data.message)
+        setError(true)
+     }
         if (response.data.status == "DONE"){
           setSuccess(true)
           navigateTo("results")
@@ -57,7 +63,10 @@ useEffect(() => {
             </React.Fragment>
             }
             {success &&  navigateTo("results")}
-            {error && <h3 className='error' style={{fontSize: 20, textAlign: 'center'}}>Someting is wrong with the given parameters or data, please check them again</h3>}  
+          {error && <React.Fragment><h3 className='error' style={{fontSize: 20, textAlign: 'center'}}>Someting is wrong! </h3>
+          <h3 className='error' style={{fontSize: 20, textAlign: 'center'}}> Error message: {error_msg}</h3> 
+          <p></p></React.Fragment>
+}  
         </div>
     )
 }
