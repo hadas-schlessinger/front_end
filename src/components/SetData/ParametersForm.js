@@ -58,19 +58,19 @@ return (
             <label>Max K</label>
             <input type="number" name="max_testing_k" placeholder="6" onChange={event => setK(event.target.value)}/>
         <h3>Log transformation on cytokine data</h3>
-            <p>Check this box if you want to log-transform your data (see further explanation on data transformation on this <a href="https://en.wikipedia.org/wiki/Data_transformation_(statistics)"> Wikipedia</a> page</p>
+            <p>Check this box if you want to log-transform your data (see further explanation on this <a href="https://en.wikipedia.org/wiki/Data_transformation_(statistics)"> Wikipedia</a> page)</p>
             <p>Please note - the specific transformation is log(x+1)</p>
             <input type="checkbox" name="log_transform" onChange={event => setLogCytokines(event.target.value)}/>
             <label>log transformation</label>     
        
         <h3>Name of the compartment</h3>
-            <p>Insert the name of compartment from which cytokines were extracted, e.g., serum, nasel, etc. This will be used for generating figures. optional. </p>
+            <p>Optional. Insert the name of compartment from which cytokines were extracted, e.g., serum, nasel, etc. This will be used for generating figures.</p>
             <label>Name Compartment</label>
             <input type="text" name="name_compartment" placeholder="Plasma, Nasal Wash" onChange={event => setComperament(event.target.value)}/>
         {patients && 
         <Fragment >
         <h2>Sample Demographics and Clinical Outcomes Parameters (optional)</h2>
-        <b>Please set these parmeters only if you uploaded a sample demographics and clinical outcomes/phenotypes file. These parameters will be ignored if no such file was uploaded</b>
+        <b>Please set these parmeters only if you uploaded a sample demographics and clinical outcomes/phenotypes file and specified outcome columns. These parameters will be ignored if no such file was uploaded</b>
         <h3>Outcomes</h3>
             <p>Optional. If your data contains clinical output columns (e.g. hospitalization, disease severity), you can list these here. This will allow the method to also analyze associations between cytokine modules and these outcomes. The chosen outcome columns should be binary or continues (numeric) variables.
                 Column names should be separated by commas (i.e. outcome1, outcome2, ..., outcomeN). Also, column names shouldn’t contain commas.
