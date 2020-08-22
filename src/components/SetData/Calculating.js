@@ -8,7 +8,8 @@ import * as SetParams from  '../../services/SetParams'
 export default function Calculating(props) {
   const [success, setSuccess] = useState(false)
   const [error, setError] = useState(false);
-  const [error_msg, setErrorMsg] = useState(false);
+  const [error_msg, setErrorMsg] = useState("Server Error");
+  const [error_type, setErrorType] = useState(false);
   const history = useHistory();
 
     const request = () => {
@@ -19,10 +20,12 @@ export default function Calculating(props) {
       SetParams.methodStatus(props.projectName, props.formID.id).then((response) =>{
         console.log({status: response.data.status});
         if (response.data.status == "DATA ERROR"){
+          setErrorType("INPUT ERROR")
           setErrorMsg(response.data.message)
           setError(true)
        }
        if (response.data.status == "RUN TIME ERROR"){
+        setErrorType("SERVER INTERNAL ERROR")
         setErrorMsg(response.data.message)
         setError(true)
      }
@@ -56,15 +59,14 @@ useEffect(() => {
         <div style={{height: '100%', width:'100%'}}>
             {!error &&
             <React.Fragment>
-               <h2 style={{color: '#194d33', fontSize: 20, textAlign: 'center'}}>Your project ID is: </h2>
-               <h2 style={{textTransform: 'lowercase', color: '#194d33', fontSize: 20, textAlign: 'center'}}>{props.formID.id} </h2>
+               <h2 style={{color: '#194d33', fontSize: 20, textAlign: 'center'}}>Your project ID is: {props.formID.id} </h2>
                <h2 style={{color: '#194d33', fontSize: 20, textAlign: 'center'}}>Your project name is {props.projectName} </h2>
                <LoadingPage/>
             </React.Fragment>
             }
             {success &&  navigateTo("results")}
           {error && <React.Fragment><h3 className='error' style={{fontSize: 20, textAlign: 'center'}}>Someting is wrong! </h3>
-          <h3 className='error' style={{fontSize: 20, textAlign: 'center'}}> Error message: {error_msg}</h3> 
+          <h3 className='error' style={{fontSize: 20, textAlign: 'center'}}> {error_type} - Error message: {error_msg}</h3> 
           <p></p></React.Fragment>
 }  
         </div>

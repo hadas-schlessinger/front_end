@@ -110,7 +110,7 @@ export default function UploadForm({onSetName}) {
             <p>
             <p>Upload a de-identified patient data file. The file should be in .xlsx format. Please make sure no personal identifiable information (e.g. patient name, id number) is uploaded within this file. </p> 
             <p>This table should contain clinical outcomes/phenotypes (e.g. hospitalization, disease severity) and any additional demographic data that you would like the computational model to consider when assessing associations of cytokine modules and clinical outcomes/phenotypes. </p>
-            <p> Important: make sure binary outcome columns only contain 0/1 values.or True/False values. Entries with unknown values should be left empty or NA (will be dropped). File can have multiple clinical outcomes/phenotype columns as well as multiple demographic columns.The first column of this file should be the sample id (de-identified)   or a numerical index. Here is an example format </p>
+            <p> Important: make sure binary outcome columns only contain 0/1 values or True/False values. Categorial variables should be inserted as dummy variables. Entries with unknown values should be left empty or NA (will be dropped). File can have multiple clinical outcomes/phenotype columns as well as multiple demographic columns.The first column of this file should be the sample id (de-identified) or a numerical index. Here is an example format </p>
             <Table celled>
     <Table.Header>
       <Table.Row>
