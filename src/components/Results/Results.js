@@ -17,7 +17,9 @@ export default function Results({state}) {
   const [gotResults, setGotResults] = useState(false)
   const [name, setName] = useState("")
   const [id, setID] = useState("")
+  const [calculation, setCalculation] = useState(false)
 
+  
   function onSubmit() {
     results(id)
   }
@@ -27,6 +29,7 @@ export default function Results({state}) {
     if(id != null ){
       ResultsService.getResults(id).then((response) =>{
         const data = response.data
+        setCalculation(true)
         setdata(data)
         setError(false)
         setOldProjec(false)
@@ -34,6 +37,7 @@ export default function Results({state}) {
     
       }).catch((e)=>{
         console.log(e)
+        setCalculation(false)
         setError(true)
   
       })
@@ -93,12 +97,17 @@ return (
       />               
                
                 }
+        
       {(gotResults) && 
       <Tab style={{fontSize: 20}} 
       menu={{ fluid: true, vertical: true, tabular: true }} 
       grid={{paneWidth: 14, tabWidth: 2}} 
       panes={panes}
       />}
+      {calculation && <React.Fragment>
+            <div className='loader'></div>
+            <div style={{ textAlign: "center" }}>Please wait while the results are tracked...</div>
+            </React.Fragment>}
       {error &&  <h3 style = {{ textAlign: "center" }} className='error'>Can't find the ID, please insert another project ID</h3>}
     </div>
     

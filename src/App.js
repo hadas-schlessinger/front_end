@@ -6,16 +6,9 @@ import NavigationBar  from './components/NavigationBar';
 import Home from './components/Home/Home';
 import Set from './components/SetData/Set';
 import Results from './components/Results/Results';
-import ReactGA from 'react-ga';
 import { createBrowserHistory } from 'history';
 
 const history = createBrowserHistory();
-
-ReactGA.initialize('UA-175788401-1');
-history.listen(location => {
-  ReactGA.set({ page: location.pathname }); // Update the user's current page
-  ReactGA.pageview(location.pathname); // Record a pageview for the given page
-});
 
 function App() {
 
