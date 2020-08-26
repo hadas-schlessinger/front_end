@@ -43,7 +43,7 @@ export default function OverviewPanel(props) {
                 
                 
                 <h2>Figures</h2>
-                <h4> Click to download any of the output figures </h4>  
+                <h4> Click on any figure to download </h4>  
                   <table>
                   <tbody>
                 {rows.map(row =>                  

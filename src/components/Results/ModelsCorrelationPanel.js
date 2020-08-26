@@ -4,10 +4,12 @@ import { Tab } from 'semantic-ui-react'
 import ResultsSchema from './ResultsSchema'
 
 export default function ModelsCorrelationPanel(props) {
+
     const panes = [
         {
           menuItem: 'Absolute Cytokines',
-          render: () => <Tab.Pane>{< ResultsSchema id = {props.id} 
+          render: () => <Tab.Pane> 
+            {< ResultsSchema id = {props.id} 
           results = {props.results} 
           panel={'Modules Correlation'}
           state={'Absolute'}
@@ -16,7 +18,7 @@ export default function ModelsCorrelationPanel(props) {
         },
         {
           menuItem: 'Adjusted Cytokines',
-          render: () => <Tab.Pane>{< ResultsSchema id = {props.id}
+          render: () => <Tab.Pane> {< ResultsSchema id = {props.id}
           results = {props.results} 
           panel={'Modules Correlation'}
           state={'Adjusted'}
@@ -28,11 +30,7 @@ export default function ModelsCorrelationPanel(props) {
 
     return (
         <div style={{backgroundImage: `url(${beckgroungTransperant})`}}>
-
-
-
          <Tab panes={panes} />
-
         </div>
     )
 }

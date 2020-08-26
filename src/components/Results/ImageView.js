@@ -1,7 +1,7 @@
 import React from 'react'
 import decoder from '../../services/ImageDecoder'
 
-export default function ImageView(props) { 
+export default function ImageView(props) {
 
   
     if(props.results.location[props.row]==props.location){

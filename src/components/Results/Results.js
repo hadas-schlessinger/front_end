@@ -34,6 +34,8 @@ export default function Results({state}) {
         setError(false)
         setOldProjec(false)
         setGotResults(true)
+        setCalculation(false)
+
     
       }).catch((e)=>{
         console.log(e)
@@ -92,7 +94,7 @@ return (
         <input type="text" name="id" placeholder="id" onChange={event => setID(event.target.value)}/ >            </form>
         <p></p>
         <input type="submit" value="Submit" onClick={(event) => onSubmit(event)}/>
-        <p>Clicking the "Submit" button, will return previous run results</p>
+        <p>Clicking the "Submit" button, will return previous run results. Loading results might take several seconds.</p>
           </div>}</Tab.Pane>}]}
       />               
                
@@ -105,8 +107,7 @@ return (
       panes={panes}
       />}
       {calculation && <React.Fragment>
-            <div className='loader'></div>
-            <div style={{ textAlign: "center" }}>Please wait while the results are tracked...</div>
+            <div style={{ textAlign: "center" }}>Please wait while the results are loaded...</div>
             </React.Fragment>}
       {error &&  <h3 style = {{ textAlign: "center" }} className='error'>Can't find the ID, please insert another project ID</h3>}
     </div>
