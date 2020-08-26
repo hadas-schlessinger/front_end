@@ -21,7 +21,10 @@ export default function Results({state}) {
 
   
   function onSubmit() {
+    setError(false)
+    setCalculation(true)
     results(id)
+
   }
 
 
@@ -29,7 +32,6 @@ export default function Results({state}) {
     if(id != null ){
       ResultsService.getResults(id).then((response) =>{
         const data = response.data
-        setCalculation(true)
         setdata(data)
         setError(false)
         setOldProjec(false)
@@ -43,7 +45,8 @@ export default function Results({state}) {
         setError(true)
   
       })
-    }}
+    }
+  }
     
   useEffect(() => {
     console.log({state: state})
@@ -94,8 +97,8 @@ return (
         <input type="text" name="id" placeholder="id" onChange={event => setID(event.target.value)}/ >            </form>
         <p></p>
         <input type="submit" value="Submit" onClick={(event) => onSubmit(event)}/>
-        <p>Clicking the "Submit" button, will return previous run results. Loading results might take several seconds.</p>
-          </div>}</Tab.Pane>}]}
+        <p>Clicking the "Submit" button, will return previous run results. Loading the results might take several seconds.</p>
+        </div>}</Tab.Pane>}]}
       />               
                
                 }
@@ -105,8 +108,11 @@ return (
       menu={{ fluid: true, vertical: true, tabular: true }} 
       grid={{paneWidth: 14, tabWidth: 2}} 
       panes={panes}
-      />}
+      />
+    }
       {calculation && <React.Fragment>
+        <div className='loader'></div>
+
             <div style={{ textAlign: "center" }}>Please wait while the results are loaded...</div>
             </React.Fragment>}
       {error &&  <h3 style = {{ textAlign: "center" }} className='error'>Can't find the ID, please insert another project ID</h3>}

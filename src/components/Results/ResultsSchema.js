@@ -9,7 +9,8 @@ export default function ResultsSchema(props) {
     const [hasResults, sethasResults] = useState(false)
     const [NoFigures, setNoFigures] = useState(false)
     const [rows, setrows] = useState(Object.keys(props.results.image))
-    
+    const [calculation, setCalculation] = useState(true)
+
     const hasFigure = () =>{
         if(props.results!=''){
             let counter = 0
@@ -21,7 +22,9 @@ export default function ResultsSchema(props) {
             console.log(counter)
             if (counter==0){
                 setNoFigures(true)
-            }                      
+            }
+            setCalculation(false)
+                      
         }
        
     }
@@ -41,7 +44,11 @@ export default function ResultsSchema(props) {
         <div style={{backgroundImage: `url(${beckgroungTransperant})`}}>           
                  <h1>{props.panel} Results for {props.state} Cytokines for the {props.id} Project </h1>
                 <h3>{props.overview}</h3>
-                 
+                {calculation && <React.Fragment>
+                    <div className='loader'></div>
+
+            <div style={{ textAlign: "center" }}>Please wait while the results are loaded...</div>
+            </React.Fragment>}
                 { hasResults && 
                 <React.Fragment>
                 <h4> Click on any figure to download </h4>  
